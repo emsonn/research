@@ -16,6 +16,74 @@ import json
 import textwrap
 
 
+def file_headers(file1, file2):
+
+    # Bunch of print statements and formatting that will be done to the new specified file.
+    file1.write("FixedBugReport by Edward M. Abrahamson.\n\n"
+                "Created a script in Python to filter out the unnecessary bug-finding\n"
+                "information from the the beautified \"unique.json\" file (courtesy of Da Kim),\n"
+                "making the information easier to read.\n"
+                "Cut unique.json down from 168,008 lines of text to 3,431 lines of text.\n"
+                "Removed some pieces of info that didn't seem to help much - can add back if\n"
+                "needed.\n\n"
+                "NOTE: Removed \"DEAD STORE\" issues from this output file - we do not\n"
+                "need to do them.  I put them in their own file (\"DeadStoreBugs.txt\")\n"
+                "if anyone is interested in looking at them.\n\n\n"
+
+                "BUG BREAKDOWN:"
+                "\n\n0/  6   API Issues          (solved)"
+                "\n0/ 17   Memory Errors       (solved)"
+                "\n0/ 42   Security Issues     (solved)"
+                "\n0/119   Logic Errors        (solved)"
+                "\n.........................................."
+                "\n0/184   Total Issues        (solved)\n\n"
+                "===============================================================================\n")
+
+    # Bunch of print statements and formatting that will be done to the new specified file.
+    file2.write("DEAD STORE bug report by Edward M. Abrahamson.\n\n"
+                "Created a script in Python to filter out the unnecessary bug-finding\n"
+                "information from the the beautified \"unique.json\" file (courtesy of Da Kim),\n"
+                "making the information easier to read.\n"
+                "Cut unique.json down from 168,008 lines of text to 1,712 lines of text.\n"
+                "Removed some pieces of info that didn't seem to help much - can add back if\n"
+                "needed.\n\n"
+                "NOTE: THIS FILE ONLY COVERS THE \"DEAD STORE\" ISSUES THAT WERE CUT FROM\n"
+                "FixedBugReport.txt - WE DO NOT NEED TO DO THESE.\n\n"
+                "*Solving these bugs is just for personal practice*\n\n\n"
+
+                "BUG BREAKDOWN:"
+                "\n\n0/ 94   Dead Store Issues     (solved)"
+                "\n.........................................."
+                "\n0/ 94   Total Issues          (solved)\n\n"
+                "===============================================================================\n")
+
+
+# Will print the necessary information to either FixedBugReport.txt or DeadStoreBugs.txt
+def output_file_print(file, line, counter, isFixedBugReport):
+
+    if (isFixedBugReport):
+        file.write("\n\n[ISSUE " + str(counter) + ": " + line['category'].upper() + "]\n" +
+                   textwrap.fill(line['description'], 70) + ".\n\nFILE: " + line['file'] + "\n" +
+                   str(line['location']) +
+                   "\n\nNOTES:\n\n\n"
+                   "Is this an actual issue?\n\n"
+                   "    -\n\n\n"
+                   "[COMPLETE?]: ")
+
+    else:
+        file.write("\n\n[ISSUE " + str(counter) + "]\n" +
+                   textwrap.fill(line['description'], 70) + ".\n\nFILE: " + line['file'] + "\n" +
+                   str(line['location']) +
+                   "\n\nNOTES:\n\n\n"
+                   "Is this an actual issue?\n\n"
+                   "    -\n\n\n"
+                   "[COMPLETE?]: ")
+
+
+def print_bug_separator(file):
+    file.write("\n\n+------------------------------------------------------------------------+")
+
+
 def main():
 
     # Opens .json file, loads, reads, and stores to variable.
@@ -27,7 +95,7 @@ def main():
     dead_store_file = open("DeadStoreBugs.txt", "w")
 
     # Call to function that will do the header printing without polluting the main function.
-    fileHeaders(new_file, dead_store_file)
+    file_headers(new_file, dead_store_file)
 
     # Counter variable to keep track of the number of bugs we have to find.
     # Makes talking about a specific bug a LOT easier.
@@ -43,39 +111,24 @@ def main():
         # Will write to FixedBugReport.txt
         if line['category'].lower() != "dead store":
 
-            # Disgusting-looking print formatting, don't worry about this.
-            # The main part are the first two lines (everything before the "\n\nNOTES:\n\n\n":
-            #   Is checking the .json file for specified tags and storing them as either a
-            #   list or a dictionary, depending on the format in the .json (I think?).
-            new_file.write("\n\n[ISSUE " + str(i) + ": " + line['category'].upper() + "]\n" +
-                           textwrap.fill(line['description'], 70) + ".\n\nFILE: " + line['file'] + "\n" +
-                           str(line['location']) +
-                           "\n\nNOTES:\n\n\n"
-                           "Is this an actual issue?\n\n"
-                           "    -\n\n\n"
-                           "[COMPLETE?]: ")
+            output_file_print(new_file, line, i, True)
 
             # Will not print this in the last iteration.
             if line is not last:
-                new_file.write("\n\n+------------------------------------------------------------------------+")
+                print_bug_separator(new_file)
 
             # Bug count incrementer.
             i += 1
 
         # Will write to DeadStoreBug.txt.
         else:
-            dead_store_file.write("\n\n[ISSUE " + str(j) + "]\n" +
-                                  textwrap.fill(line['description'], 70) + ".\n\nFILE: " + line['file'] + "\n" +
-                                  str(line['location']) +
-                                  "\n\nNOTES:\n\n\n"
-                                  "Is this an actual issue?\n\n"
-                                  "    -\n\n\n"
-                                  "[COMPLETE?]: ")
+
+            output_file_print(dead_store_file, line, j, False)
 
             # Will not print this in the last iteration.
             # Did not want to hard-code this, but it did the job for the time being.
             if j < 94:
-                dead_store_file.write("\n\n+------------------------------------------------------------------------+")
+                print_bug_separator(dead_store_file)
 
             # Bug count incrementer.
             j += 1
@@ -84,46 +137,6 @@ def main():
     new_file.close()
     dead_store_file.close()
 
-def fileHeaders(new_file, dead_store_file):
-
-    # Bunch of print statements and formatting that will be done to the new specified file.
-    new_file.write("FixedBugReport by Edward M. Abrahamson.\n\n"
-                   "Created a script in Python to filter out the unnecessary bug-finding\n"
-                   "information from the the beautified \"unique.json\" file (courtesy of Da Kim),\n"
-                   "making the information easier to read.\n"
-                   "Cut unique.json down from 168,008 lines of text to 3,431 lines of text.\n"
-                   "Removed some pieces of info that didn't seem to help much - can add back if\n"
-                   "needed.\n\n"
-                   "NOTE: Removed \"DEAD STORE\" issues from this output file - we do not\n"
-                   "need to do them.  I put them in their own file (\"DeadStoreBugs.txt\")\n"
-                   "if anyone is interested in looking at them.\n\n"
-
-                   "BUG BREAKDOWN:"
-                   "\n\n0/  6   API Issues          (solved)"
-                   "\n0/ 17   Memory Errors       (solved)"
-                   "\n0/ 42   Security Issues     (solved)"
-                   "\n0/119   Logic Errors        (solved)"
-                   "\n.........................................."
-                   "\n0/184   Total Issues        (solved)\n\n"
-                   "===============================================================================\n")
-
-    # Bunch of print statements and formatting that will be done to the new specified file.
-    dead_store_file.write("DEAD STORE bug report by Edward M. Abrahamson.\n\n"
-                          "Created a script in Python to filter out the unnecessary bug-finding\n"
-                          "information from the the beautified \"unique.json\" file (courtesy of Da Kim),\n"
-                          "making the information easier to read.\n"
-                          "Cut unique.json down from 168,008 lines of text to 1,712 lines of text.\n"
-                          "Removed some pieces of info that didn't seem to help much - can add back if\n"
-                          "needed.\n\n"
-                          "NOTE: THIS FILE ONLY COVERS THE \"DEAD STORE\" ISSUES THAT WERE CUT FROM\n"
-                          "FixedBugReport.txt - WE DO NOT NEED TO DO THESE.\n\n"
-                          "*Solving these bugs is just for personal practice*\n\n"
-
-                          "BUG BREAKDOWN:"
-                          "\n\n0/ 94   Dead Store Issues     (solved)"
-                          "\n.........................................."
-                          "\n0/ 94   Total Issues          (solved)\n\n"
-                          "===============================================================================\n")
 
 # Not entirely sure if this is how a main function is supposed to be referenced -
 #   saw it in a video and thought it seemed legit
