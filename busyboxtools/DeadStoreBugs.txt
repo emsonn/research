@@ -1,0 +1,1712 @@
+DEAD STORE bug report by Edward M. Abrahamson.
+
+Created a script in Python to filter out the unnecessary bug-finding
+information from the the beautified "unique.json" file (courtesy of Da Kim),
+making the information easier to read.
+Cut unique.json down from 168,008 lines of text to 1,712 lines of text.
+Removed some pieces of info that didn't seem to help much - can add back if
+needed.
+
+NOTE: THIS FILE ONLY COVERS THE "DEAD STORE" ISSUES THAT WERE CUT FROM
+FixedBugReport.txt - WE DO NOT NEED TO DO THESE.
+
+*Solving these bugs is just for personal practice*
+
+BUG BREAKDOWN:
+
+0/ 94   Dead Store Issues     (solved)
+..........................................
+0/ 94   Total Issues          (solved)
+
+===============================================================================
+
+
+[ISSUE 1]
+Value stored to 'id' is never read.
+
+FILE: util-linux/ipcrm.c
+{'line': 149, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 2]
+Value stored to 'ifsspc' is never read.
+
+FILE: shell/ash.c
+{'line': 5887, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 3]
+Value stored to 'nulonly' is never read.
+
+FILE: shell/ash.c
+{'line': 5888, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 4]
+Value stored to 'sz' is never read.
+
+FILE: printutils/lpr.c
+{'line': 63, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 5]
+Value stored to 'r' is never read.
+
+FILE: archival/libarchive/lzo1x_9x.c
+{'line': 790, 'col': 4, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 6]
+Value stored to 'r' is never read.
+
+FILE: archival/libarchive/lzo1x_9x.c
+{'line': 822, 'col': 4, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 7]
+Value stored to 'r' is never read.
+
+FILE: archival/libarchive/lzo1x_9x.c
+{'line': 869, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 8]
+Value stored to 'brd_len' is never read.
+
+FILE: networking/libiproute/ipaddress.c
+{'line': 726, 'col': 4, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 9]
+Value stored to 'offset_value_end' is never read.
+
+FILE: archival/dpkg.c
+{'line': 602, 'col': 4, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 10]
+Value stored to 'res' is never read.
+
+FILE: networking/tls_rsa.c
+{'line': 150, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 11]
+Value stored to 'n' is never read.
+
+FILE: libbb/read_key.c
+{'line': 206, 'col': 5, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 12]
+Value stored to 'b' is never read.
+
+FILE: editors/awk.c
+{'line': 2033, 'col': 4, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 13]
+Value stored to 'fp' during its initialization is never read.
+
+FILE: miscutils/fbsplash.c
+{'line': 493, 'col': 8, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 14]
+Value stored to 'c' is never read.
+
+FILE: editors/vi.c
+{'line': 815, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 15]
+Value stored to 'p' is never read.
+
+FILE: editors/vi.c
+{'line': 2943, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 16]
+Value stored to 'p' is never read.
+
+FILE: editors/vi.c
+{'line': 2946, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 17]
+Value stored to 'rc' is never read.
+
+FILE: networking/telnetd.c
+{'line': 266, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 18]
+Value stored to 'msg' is never read.
+
+FILE: miscutils/devfsd.c
+{'line': 616, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 19]
+Value stored to 'msg' is never read.
+
+FILE: miscutils/devfsd.c
+{'line': 628, 'col': 5, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 20]
+Value stored to 'msg' is never read.
+
+FILE: miscutils/devfsd.c
+{'line': 680, 'col': 4, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 21]
+Value stored to 'ret' is never read.
+
+FILE: miscutils/devfsd.c
+{'line': 906, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 22]
+Value stored to 'ret' is never read.
+
+FILE: miscutils/devfsd.c
+{'line': 1000, 'col': 4, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 23]
+Value stored to 'out_pos' is never read.
+
+FILE: miscutils/devfsd.c
+{'line': 1734, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 24]
+Value stored to 'w' is never read.
+
+FILE: libbb/lineedit.c
+{'line': 324, 'col': 4, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 25]
+Value stored to 'last_terminated' is never read.
+
+FILE: miscutils/less.c
+{'line': 553, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 26]
+Value stored to 'c' is never read.
+
+FILE: miscutils/less.c
+{'line': 1140, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 27]
+Value stored to 'f' during its initialization is never read.
+
+FILE: libbb/pw_encrypt_des.c
+{'line': 601, 'col': 11, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 28]
+Value stored to 'xhdr' is never read.
+
+FILE: networking/tls.c
+{'line': 567, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 29]
+Value stored to 'have1' is never read.
+
+FILE: editors/ed.c
+{'line': 803, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 30]
+Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'line': 3912, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 31]
+Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'line': 3916, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 32]
+Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'line': 3925, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 33]
+Value stored to 'dup_num' is never read.
+
+FILE: shell/hush.c
+{'line': 3949, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 34]
+Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'line': 3959, 'col': 4, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 35]
+Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'line': 3961, 'col': 4, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 36]
+Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'line': 3972, 'col': 4, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 37]
+Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'line': 4246, 'col': 4, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 38]
+Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'line': 4544, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 39]
+Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'line': 4663, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 40]
+Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'line': 4667, 'col': 4, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 41]
+Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'line': 4701, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 42]
+Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'line': 5102, 'col': 5, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 43]
+Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'line': 5124, 'col': 5, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 44]
+Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'line': 5128, 'col': 5, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 45]
+Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'line': 5170, 'col': 5, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 46]
+Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'line': 5279, 'col': 5, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 47]
+Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'line': 5299, 'col': 5, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 48]
+Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'line': 5315, 'col': 5, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 49]
+Value stored to 'exp_op' is never read.
+
+FILE: shell/hush.c
+{'line': 5659, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 50]
+Value stored to 'rword' is never read.
+
+FILE: shell/hush.c
+{'line': 8369, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 51]
+Value stored to 'sig' is never read.
+
+FILE: shell/hush.c
+{'line': 10108, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 52]
+Value stored to 'ptr' is never read.
+
+FILE: miscutils/lsscsi.c
+{'line': 87, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 53]
+Value stored to 'mode' during its initialization is never read.
+
+FILE: util-linux/fbset.c
+{'line': 454, 'col': 8, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 54]
+Value stored to 'jp1' is never read.
+
+FILE: shell/ash.c
+{'line': 3743, 'col': 4, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 55]
+Value stored to 'opcode' is never read.
+
+FILE: networking/tftp.c
+{'line': 517, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 56]
+Value stored to 'opt' is never read.
+
+FILE: procps/pidof.c
+{'line': 87, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 57]
+Value stored to 'total_size' is never read.
+
+FILE: archival/unzip.c
+{'line': 680, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 58]
+Value stored to 'cdf_offset' is never read.
+
+FILE: archival/unzip.c
+{'line': 682, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 59]
+Value stored to 'block' is never read.
+
+FILE: util-linux/fsck_minix.c
+{'line': 791, 'col': 4, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 60]
+Value stored to 'aliaslink' during its initialization is never read.
+
+FILE: util-linux/mdev.c
+{'line': 624, 'col': 8, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 61]
+Value stored to 'str_to_match' is never read.
+
+FILE: util-linux/mdev.c
+{'line': 628, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 62]
+Value stored to 'offset' is never read.
+
+FILE: miscutils/flash_lock_unlock.c
+{'line': 61, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 63]
+Value stored to 'sectors' is never read.
+
+FILE: miscutils/flash_lock_unlock.c
+{'line': 62, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 64]
+Value stored to 'tty' is never read.
+
+FILE: loginutils/su.c
+{'line': 111, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 65]
+Value stored to 'size_bytes' during its initialization is never read.
+
+FILE: miscutils/ubi_tools.c
+{'line': 121, 'col': 21, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 66]
+Value stored to 'size_bytes' is never read.
+
+FILE: miscutils/ubi_tools.c
+{'line': 165, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 67]
+Value stored to 'sec_linger' during its initialization is never read.
+
+FILE: networking/telnetd.c
+{'line': 651, 'col': 6, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 68]
+Value stored to 'cnt' is never read.
+
+FILE: miscutils/nandwrite.c
+{'line': 201, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 69]
+Value stored to 'rs' is never read.
+
+FILE: networking/inetd.c
+{'line': 1636, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 70]
+Value stored to 'li' is never read.
+
+FILE: editors/vi.c
+{'line': 1095, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 71]
+Value stored to 'li' is never read.
+
+FILE: editors/vi.c
+{'line': 1099, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 72]
+Value stored to 'li' is never read.
+
+FILE: editors/vi.c
+{'line': 1133, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 73]
+Value stored to 'li' is never read.
+
+FILE: editors/vi.c
+{'line': 1140, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 74]
+Value stored to 'opcode' is never read.
+
+FILE: networking/tftp.c
+{'line': 445, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 75]
+Value stored to 'usage_string' during its initialization is never read.
+
+FILE: libbb/appletlib.c
+{'line': 149, 'col': 15, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 76]
+Value stored to 'val' is never read.
+
+FILE: util-linux/mdev.c
+{'line': 417, 'col': 4, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 77]
+Value stored to 'arg0' is never read.
+
+FILE: coreutils/test.c
+{'line': 825, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 78]
+Value stored to 'pid' is never read.
+
+FILE: procps/kill.c
+{'line': 208, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 79]
+Value stored to 'bar' is never read.
+
+FILE: procps/nmeter.c
+{'line': 412, 'col': 30, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 80]
+Value stored to 'last' is never read.
+
+FILE: procps/nmeter.c
+{'line': 915, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 81]
+Value stored to 'sfd' during its initialization is never read.
+
+FILE: networking/nc.c
+{'line': 122, 'col': 6, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 82]
+Value stored to 'zPend' is never read.
+
+FILE: archival/libarchive/bz/compress.c
+{'line': 234, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 83]
+Value stored to 'orig_buf' is never read.
+
+FILE: editors/vi.c
+{'line': 1106, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 84]
+Value stored to 'opts' is never read.
+
+FILE: coreutils/cat.c
+{'line': 190, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 85]
+Value stored to 'val' is never read.
+
+FILE: util-linux/mdev.c
+{'line': 413, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 86]
+Value stored to 'cp' is never read.
+
+FILE: networking/tftp.c
+{'line': 396, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 87]
+Value stored to 'i' is never read.
+
+FILE: editors/vi.c
+{'line': 1358, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 88]
+Value stored to 'opts' is never read.
+
+FILE: networking/hostname.c
+{'line': 136, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 89]
+Value stored to 'block_nr' is never read.
+
+FILE: networking/tftp.c
+{'line': 395, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 90]
+Value stored to 'arg' is never read.
+
+FILE: procps/kill.c
+{'line': 205, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 91]
+Value stored to 'pid' is never read.
+
+FILE: networking/inetd.c
+{'line': 1364, 'col': 4, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 92]
+Value stored to 'ext' during its initialization is never read.
+
+FILE: miscutils/man.c
+{'line': 171, 'col': 8, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 93]
+Value stored to 'opt' is never read.
+
+FILE: archival/gzip.c
+{'line': 2221, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 94]
+Value stored to 'opt' is never read.
+
+FILE: archival/gzip.c
+{'line': 2223, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
