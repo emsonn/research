@@ -1,0 +1,4751 @@
+Edited bug report by Edward M. Abrahamson.
+
+Created a script in Python to filter out the unnecessary bug-finding
+information from the the beautified unique.json file (courtesy of Da Kim),
+making the information easier to read.
+Cut the unique.json file from 168,008 lines of text down to 4,751 lines of text.
+Removed some pieces of info that didn't seem to help much - can add back if needed.
+
+NOTE: For some reason, the 'col', 'file', and 'line' locations switch around sometimes -
+probably due to how I read in input.  Regardless, the information is the exact same.
+
+
+BUG BREAKDOWN:
+
+0/  6	API Issues			(solved)
+0/ 17	Memory Errors		(solved)
+0/ 42	Security Issues		(solved)
+0/ 94	Dead Store Issues	(solved)
+0/119	Logic Errors		(solved)
+.....................................
+0/278	Total Issues		(solved)
+
+==============================================================================================
+
+
+
+[ISSUE 1!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: miscutils/crond.c
+{'file': 0, 'col': 8, 'line': 710}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 2!]	LOGIC ERROR: This function call is prohibited after a successful vfork.
+
+FILE: miscutils/crond.c
+{'file': 0, 'col': 3, 'line': 714}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 3!]	LOGIC ERROR: Function call argument is an uninitialized value.
+
+FILE: networking/brctl.c
+{'file': 0, 'col': 6, 'line': 269}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 4!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: printutils/lpd.c
+{'file': 0, 'col': 2, 'line': 120}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 5!]	DEAD STORE: Value stored to 'id' is never read.
+
+FILE: util-linux/ipcrm.c
+{'file': 0, 'col': 3, 'line': 149}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 6!]	LOGIC ERROR: Function call argument is an uninitialized value.
+
+FILE: archival/bbunzip.c
+{'file': 0, 'col': 8, 'line': 123}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 7!]	LOGIC ERROR: The left operand of '!=' is a garbage value.
+
+FILE: archival/bbunzip.c
+{'file': 0, 'col': 22, 'line': 158}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 8!]	LOGIC ERROR: This assignment is prohibited after a successful vfork.
+
+FILE: libbb/xfuncs_printf.c
+{'file': 0, 'col': 6, 'line': 682}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 9!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: libbb/xfuncs_printf.c
+{'file': 0, 'col': 8, 'line': 682}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 10!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: init/bootchartd.c
+{'file': 0, 'col': 15, 'line': 459}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 11!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: editors/patch.c
+{'file': 0, 'col': 2, 'line': 369}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 12!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: util-linux/mdev.c
+{'file': 0, 'col': 3, 'line': 624}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 13!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: util-linux/mdev.c
+{'file': 0, 'col': 3, 'line': 1087}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 14!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: miscutils/ubi_tools.c
+{'file': 0, 'col': 2, 'line': 121}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 15!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: util-linux/volume_id/get_devname.c
+{'file': 0, 'col': 2, 'line': 254}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 16!]	MEMORY ERROR: Use of memory after it is freed.
+
+FILE: findutils/find.c
+{'file': 0, 'col': 14, 'line': 651}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 17!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: networking/tcpudp.c
+{'file': 0, 'col': 2, 'line': 250}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 18!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: networking/tcpudp.c
+{'file': 0, 'col': 8, 'line': 479}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 19!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: util-linux/more.c
+{'file': 0, 'col': 2, 'line': 76}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 20!]	MEMORY ERROR: Argument to free() is the address of the global variable 'defoptindvar', which is not memory allocated by malloc().
+
+FILE: shell/ash.c
+{'file': 0, 'col': 5, 'line': 2262}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 21!]	MEMORY ERROR: Argument to free() is the address of the global variable 'defoptindvar', which is not memory allocated by malloc().
+
+FILE: shell/ash.c
+{'file': 0, 'col': 5, 'line': 2282}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 22!]	MEMORY ERROR: Use of memory after it is freed.
+
+FILE: shell/ash.c
+{'file': 0, 'col': 2, 'line': 2304}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 23!]	DEAD STORE: Value stored to 'ifsspc' is never read.
+
+FILE: shell/ash.c
+{'file': 0, 'col': 3, 'line': 5887}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 24!]	DEAD STORE: Value stored to 'nulonly' is never read.
+
+FILE: shell/ash.c
+{'file': 0, 'col': 3, 'line': 5888}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 25!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: shell/ash.c
+{'file': 0, 'col': 10, 'line': 9230}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 26!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: networking/ifupdown.c
+{'file': 0, 'col': 11, 'line': 1141}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 27!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: findutils/grep.c
+{'file': 0, 'col': 3, 'line': 333}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 28!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: runit/runsvdir.c
+{'file': 0, 'col': 8, 'line': 127}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 29!]	LOGIC ERROR: This function call is prohibited after a successful vfork.
+
+FILE: runit/runsvdir.c
+{'file': 0, 'col': 4, 'line': 135}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 30!]	LOGIC ERROR: This function call is prohibited after a successful vfork.
+
+FILE: runit/runsvdir.c
+{'file': 0, 'col': 3, 'line': 147}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 31!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: runit/runsvdir.c
+{'file': 0, 'col': 2, 'line': 239}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 32!]	LOGIC ERROR: Array access results in a null pointer dereference.
+
+FILE: util-linux/fdisk.c
+{'file': 0, 'col': 19, 'line': 1114}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 33!]	LOGIC ERROR: The right operand of '<' is a garbage value.
+
+FILE: util-linux/fdisk.c
+{'file': 0, 'col': 47, 'line': 2387}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 34!]	LOGIC ERROR: The left operand of '+' is a garbage value.
+
+FILE: util-linux/fdisk.c
+{'file': 0, 'col': 26, 'line': 2482}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 35!]	LOGIC ERROR: The right operand of '<' is a garbage value.
+
+FILE: util-linux/fdisk.c
+{'file': 0, 'col': 13, 'line': 2522}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 36!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: networking/nc_bloaty.c
+{'file': 0, 'col': 8, 'line': 417}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 37!]	DEAD STORE: Value stored to 'sz' is never read.
+
+FILE: printutils/lpr.c
+{'file': 0, 'col': 2, 'line': 63}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 38!]	DEAD STORE: Value stored to 'r' is never read.
+
+FILE: archival/libarchive/lzo1x_9x.c
+{'file': 0, 'col': 4, 'line': 790}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 39!]	DEAD STORE: Value stored to 'r' is never read.
+
+FILE: archival/libarchive/lzo1x_9x.c
+{'file': 0, 'col': 4, 'line': 822}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 40!]	DEAD STORE: Value stored to 'r' is never read.
+
+FILE: archival/libarchive/lzo1x_9x.c
+{'file': 0, 'col': 3, 'line': 869}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 41!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: miscutils/hexedit.c
+{'file': 0, 'col': 3, 'line': 296}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 42!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: networking/inetd.c
+{'file': 0, 'col': 2, 'line': 1217}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 43!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: networking/inetd.c
+{'file': 0, 'col': 12, 'line': 1402}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 44!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: networking/udhcp/dhcpd.c
+{'file': 0, 'col': 2, 'line': 809}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 45!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: libbb/rtc.c
+{'file': 0, 'col': 2, 'line': 96}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 46!]	DEAD STORE: Value stored to 'brd_len' is never read.
+
+FILE: networking/libiproute/ipaddress.c
+{'file': 0, 'col': 4, 'line': 726}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 47!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: networking/ping.c
+{'file': 0, 'col': 2, 'line': 600}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 48!]	LOGIC ERROR: Passed-by-value struct argument contains uninitialized data (e.g., field: 's_addr').
+
+FILE: networking/ping.c
+{'file': 0, 'col': 4, 'line': 660}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 49!]	MEMORY ERROR: Use of memory after it is freed.
+
+FILE: libbb/copy_file.c
+{'file': 0, 'col': 5, 'line': 375}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 50!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: coreutils/sort.c
+{'file': 0, 'col': 2, 'line': 133}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 51!]	API: Null pointer passed as an argument to a 'nonnull' parameter.
+
+FILE: coreutils/sort.c
+{'file': 0, 'col': 2, 'line': 486}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 52!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: networking/zcip.c
+{'file': 0, 'col': 2, 'line': 183}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 53!]	LOGIC ERROR: Division by zero.
+
+FILE: miscutils/flash_eraseall.c
+{'file': 0, 'col': 55, 'line': 70}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 54!]	DEAD STORE: Value stored to 'offset_value_end' is never read.
+
+FILE: archival/dpkg.c
+{'file': 0, 'col': 4, 'line': 602}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 55!]	API: Null pointer passed as an argument to a 'nonnull' parameter.
+
+FILE: archival/dpkg.c
+{'file': 0, 'col': 8, 'line': 852}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 56!]	LOGIC ERROR: This assignment is prohibited after a successful vfork.
+
+FILE: mailutils/mail.c
+{'file': 0, 'col': 15, 'line': 49}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 57!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: mailutils/mail.c
+{'file': 0, 'col': 17, 'line': 49}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 58!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: mailutils/mail.c
+{'file': 0, 'col': 2, 'line': 118}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 59!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: console-tools/openvt.c
+{'file': 0, 'col': 6, 'line': 114}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 60!]	LOGIC ERROR: This function call is prohibited after a successful vfork.
+
+FILE: console-tools/openvt.c
+{'file': 0, 'col': 3, 'line': 117}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 61!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: networking/tls_aes.c
+{'file': 0, 'col': 9, 'line': 158}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 62!]	DEAD STORE: Value stored to 'res' is never read.
+
+FILE: networking/tls_rsa.c
+{'file': 0, 'col': 3, 'line': 150}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 63!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: runit/runsv.c
+{'file': 0, 'col': 10, 'line': 283}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 64!]	LOGIC ERROR: This function call is prohibited after a successful vfork.
+
+FILE: runit/runsv.c
+{'file': 0, 'col': 19, 'line': 290}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 65!]	LOGIC ERROR: This function call is prohibited after a successful vfork.
+
+FILE: runit/runsv.c
+{'file': 0, 'col': 5, 'line': 293}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 66!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: runit/runsv.c
+{'file': 0, 'col': 14, 'line': 360}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 67!]	LOGIC ERROR: This function call is prohibited after a successful vfork.
+
+FILE: runit/runsv.c
+{'file': 0, 'col': 5, 'line': 369}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 68!]	LOGIC ERROR: This function call is prohibited after a successful vfork.
+
+FILE: runit/runsv.c
+{'file': 0, 'col': 3, 'line': 382}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 69!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: networking/httpd.c
+{'file': 0, 'col': 8, 'line': 1554}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 70!]	LOGIC ERROR: This assignment is prohibited after a successful vfork.
+
+FILE: networking/httpd.c
+{'file': 0, 'col': 22, 'line': 1564}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 71!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: networking/httpd.c
+{'file': 0, 'col': 2, 'line': 2091}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 72!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: networking/httpd.c
+{'file': 0, 'col': 2, 'line': 2624}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 73!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: init/init.c
+{'file': 0, 'col': 9, 'line': 488}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 74!]	LOGIC ERROR: This function call is prohibited after a successful vfork.
+
+FILE: init/init.c
+{'file': 0, 'col': 2, 'line': 499}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 75!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: init/init.c
+{'file': 0, 'col': 8, 'line': 745}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 76!]	LOGIC ERROR: This function call is prohibited after a successful vfork.
+
+FILE: init/init.c
+{'file': 0, 'col': 3, 'line': 747}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 77!]	DEAD STORE: Value stored to 'n' is never read.
+
+FILE: libbb/read_key.c
+{'file': 0, 'col': 5, 'line': 206}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 78!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: networking/ntpd.c
+{'file': 0, 'col': 3, 'line': 1300}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 79!]	LOGIC ERROR: String copy function overflows destination buffer.
+
+FILE: editors/awk.c
+{'file': 0, 'col': 3, 'line': 692}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 80!]	DEAD STORE: Value stored to 'b' is never read.
+
+FILE: editors/awk.c
+{'file': 0, 'col': 4, 'line': 2033}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 81!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: editors/awk.c
+{'file': 0, 'col': 3, 'line': 2506}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 82!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: miscutils/fbsplash.c
+{'file': 0, 'col': 2, 'line': 493}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 83!]	DEAD STORE: Value stored to 'fp' during its initialization is never read.
+
+FILE: miscutils/fbsplash.c
+{'file': 0, 'col': 8, 'line': 493}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 84!]	DEAD STORE: Value stored to 'c' is never read.
+
+FILE: editors/vi.c
+{'file': 0, 'col': 2, 'line': 815}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 85!]	DEAD STORE: Value stored to 'p' is never read.
+
+FILE: editors/vi.c
+{'file': 0, 'col': 3, 'line': 2943}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 86!]	DEAD STORE: Value stored to 'p' is never read.
+
+FILE: editors/vi.c
+{'file': 0, 'col': 3, 'line': 2946}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 87!]	API: Null pointer passed as an argument to a 'nonnull' parameter.
+
+FILE: debianutils/start_stop_daemon.c
+{'file': 0, 'col': 2, 'line': 539}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 88!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: runit/chpst.c
+{'file': 0, 'col': 2, 'line': 281}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 89!]	DEAD STORE: Value stored to 'rc' is never read.
+
+FILE: networking/telnetd.c
+{'file': 0, 'col': 3, 'line': 266}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 90!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: networking/telnetd.c
+{'file': 0, 'col': 8, 'line': 481}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 91!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: networking/ftpd.c
+{'file': 0, 'col': 27, 'line': 694}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 92!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: networking/slattach.c
+{'file': 0, 'col': 2, 'line': 115}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 93!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: loginutils/login.c
+{'file': 0, 'col': 2, 'line': 327}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 94!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: libbb/vfork_daemon_rexec.c
+{'file': 0, 'col': 8, 'line': 166}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 95!]	LOGIC ERROR: This function call is prohibited after a successful vfork.
+
+FILE: libbb/vfork_daemon_rexec.c
+{'file': 0, 'col': 3, 'line': 171}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 96!]	DEAD STORE: Value stored to 'msg' is never read.
+
+FILE: miscutils/devfsd.c
+{'file': 0, 'col': 3, 'line': 616}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 97!]	DEAD STORE: Value stored to 'msg' is never read.
+
+FILE: miscutils/devfsd.c
+{'file': 0, 'col': 5, 'line': 628}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 98!]	DEAD STORE: Value stored to 'msg' is never read.
+
+FILE: miscutils/devfsd.c
+{'file': 0, 'col': 4, 'line': 680}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 99!]	DEAD STORE: Value stored to 'ret' is never read.
+
+FILE: miscutils/devfsd.c
+{'file': 0, 'col': 2, 'line': 906}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 100!]	DEAD STORE: Value stored to 'ret' is never read.
+
+FILE: miscutils/devfsd.c
+{'file': 0, 'col': 4, 'line': 1000}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 101!]	MEMORY ERROR: Use of memory after it is freed.
+
+FILE: miscutils/devfsd.c
+{'file': 0, 'col': 3, 'line': 1018}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 102!]	DEAD STORE: Value stored to 'out_pos' is never read.
+
+FILE: miscutils/devfsd.c
+{'file': 0, 'col': 3, 'line': 1734}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 103!]	LOGIC ERROR: Branch condition evaluates to a garbage value.
+
+FILE: modutils/modutils.c
+{'file': 0, 'col': 14, 'line': 27}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 104!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: networking/udhcp/domain_codec.c
+{'file': 0, 'col': 2, 'line': 34}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 105!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: coreutils/test.c
+{'file': 0, 'col': 2, 'line': 628}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 106!]	LOGIC ERROR: This assignment is prohibited after a successful vfork.
+
+FILE: util-linux/script.c
+{'file': 0, 'col': 12, 'line': 133}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 107!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: util-linux/script.c
+{'file': 0, 'col': 14, 'line': 133}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 108!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: coreutils/shred.c
+{'file': 0, 'col': 2, 'line': 44}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 109!]	DEAD STORE: Value stored to 'w' is never read.
+
+FILE: libbb/lineedit.c
+{'file': 0, 'col': 4, 'line': 324}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 110!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: miscutils/i2c_tools.c
+{'file': 0, 'col': 13, 'line': 775}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 111!]	LOGIC ERROR: This assignment is prohibited after a successful vfork.
+
+FILE: networking/wget.c
+{'file': 0, 'col': 6, 'line': 705}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 112!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: networking/wget.c
+{'file': 0, 'col': 8, 'line': 705}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 113!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: networking/wget.c
+{'file': 0, 'col': 27, 'line': 777}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 114!]	DEAD STORE: Value stored to 'last_terminated' is never read.
+
+FILE: miscutils/less.c
+{'file': 0, 'col': 3, 'line': 553}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 115!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: miscutils/less.c
+{'file': 0, 'col': 2, 'line': 740}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 116!]	DEAD STORE: Value stored to 'c' is never read.
+
+FILE: miscutils/less.c
+{'file': 0, 'col': 3, 'line': 1140}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 117!]	DEAD STORE: Value stored to 'f' during its initialization is never read.
+
+FILE: libbb/pw_encrypt_des.c
+{'file': 0, 'col': 11, 'line': 601}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 118!]	DEAD STORE: Value stored to 'xhdr' is never read.
+
+FILE: networking/tls.c
+{'file': 0, 'col': 2, 'line': 567}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 119!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: coreutils/dos2unix.c
+{'file': 0, 'col': 2, 'line': 64}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 120!]	LOGIC ERROR: Array access (from variable 'dst') results in a null pointer dereference.
+
+FILE: libbb/unicode.c
+{'file': 0, 'col': 15, 'line': 1124}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 121!]	LOGIC ERROR: The left operand of '==' is a garbage value.
+
+FILE: archival/libarchive/open_transformer.c
+{'file': 0, 'col': 14, 'line': 88}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 122!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: archival/libarchive/open_transformer.c
+{'file': 0, 'col': 27, 'line': 112}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 123!]	SECURITY: The return value from the call to 'setgid' is not checked.  If an error occurs in 'setgid', the following code may execute with unexpected privileges.
+
+FILE: libbb/appletlib.c
+{'file': 0, 'col': 3, 'line': 695}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 124!]	SECURITY: The return value from the call to 'setuid' is not checked.  If an error occurs in 'setuid', the following code may execute with unexpected privileges.
+
+FILE: libbb/appletlib.c
+{'file': 0, 'col': 3, 'line': 696}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 125!]	API: Null pointer passed as an argument to a 'nonnull' parameter.
+
+FILE: libbb/appletlib.c
+{'file': 0, 'col': 20, 'line': 932}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 126!]	LOGIC ERROR: This assignment is prohibited after a successful vfork.
+
+FILE: miscutils/time.c
+{'file': 0, 'col': 6, 'line': 398}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 127!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: miscutils/time.c
+{'file': 0, 'col': 8, 'line': 398}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 128!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: networking/udhcp/dhcpc.c
+{'file': 0, 'col': 2, 'line': 1251}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 129!]	DEAD STORE: Value stored to 'have1' is never read.
+
+FILE: editors/ed.c
+{'file': 0, 'col': 3, 'line': 803}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 130!]	LOGIC ERROR: Dereference of null pointer.
+
+FILE: util-linux/getopt.c
+{'file': 0, 'col': 21, 'line': 252}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 131!]	DEAD STORE: Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'file': 0, 'col': 2, 'line': 3912}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 132!]	DEAD STORE: Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'file': 0, 'col': 3, 'line': 3916}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 133!]	DEAD STORE: Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'file': 0, 'col': 3, 'line': 3925}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 134!]	DEAD STORE: Value stored to 'dup_num' is never read.
+
+FILE: shell/hush.c
+{'file': 0, 'col': 2, 'line': 3949}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 135!]	DEAD STORE: Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'file': 0, 'col': 4, 'line': 3959}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 136!]	DEAD STORE: Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'file': 0, 'col': 4, 'line': 3961}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 137!]	DEAD STORE: Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'file': 0, 'col': 4, 'line': 3972}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 138!]	DEAD STORE: Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'file': 0, 'col': 4, 'line': 4246}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 139!]	DEAD STORE: Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'file': 0, 'col': 3, 'line': 4544}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 140!]	DEAD STORE: Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'file': 0, 'col': 3, 'line': 4663}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 141!]	DEAD STORE: Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'file': 0, 'col': 4, 'line': 4667}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 142!]	DEAD STORE: Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'file': 0, 'col': 3, 'line': 4701}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 143!]	DEAD STORE: Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'file': 0, 'col': 5, 'line': 5102}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 144!]	DEAD STORE: Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'file': 0, 'col': 5, 'line': 5124}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 145!]	DEAD STORE: Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'file': 0, 'col': 5, 'line': 5128}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 146!]	DEAD STORE: Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'file': 0, 'col': 5, 'line': 5170}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 147!]	DEAD STORE: Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'file': 0, 'col': 5, 'line': 5279}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 148!]	DEAD STORE: Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'file': 0, 'col': 5, 'line': 5299}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 149!]	DEAD STORE: Value stored to 'ch' is never read.
+
+FILE: shell/hush.c
+{'file': 0, 'col': 5, 'line': 5315}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 150!]	LOGIC ERROR: Dereference of null pointer (loaded from variable 'val').
+
+FILE: shell/hush.c
+{'file': 0, 'col': 6, 'line': 5628}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 151!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: shell/hush.c
+{'file': 0, 'col': 2, 'line': 5649}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 152!]	DEAD STORE: Value stored to 'exp_op' is never read.
+
+FILE: shell/hush.c
+{'file': 0, 'col': 2, 'line': 5659}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 153!]	LOGIC ERROR: Array access (from variable 'argv') results in a null pointer dereference.
+
+FILE: shell/hush.c
+{'file': 0, 'col': 81, 'line': 6233}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 154!]	LOGIC ERROR: This assignment is prohibited after a successful vfork.
+
+FILE: shell/hush.c
+{'file': 0, 'col': 6, 'line': 6712}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 155!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: shell/hush.c
+{'file': 0, 'col': 8, 'line': 6712}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 156!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: shell/hush.c
+{'file': 0, 'col': 28, 'line': 6716}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 157!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: shell/hush.c
+{'file': 0, 'col': 36, 'line': 8199}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 158!]	DEAD STORE: Value stored to 'rword' is never read.
+
+FILE: shell/hush.c
+{'file': 0, 'col': 2, 'line': 8369}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 159!]	DEAD STORE: Value stored to 'sig' is never read.
+
+FILE: shell/hush.c
+{'file': 0, 'col': 2, 'line': 10108}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 160!]	LOGIC ERROR: This assignment is prohibited after a successful vfork.
+
+FILE: archival/tar.c
+{'file': 0, 'col': 10, 'line': 614}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 161!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: archival/tar.c
+{'file': 0, 'col': 12, 'line': 614}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 162!]	LOGIC ERROR: Function call argument is an uninitialized value.
+
+FILE: archival/tar.c
+{'file': 0, 'col': 3, 'line': 1232}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 163!]	DEAD STORE: Value stored to 'ptr' is never read.
+
+FILE: miscutils/lsscsi.c
+{'file': 0, 'col': 3, 'line': 87}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 164!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: util-linux/rtcwake.c
+{'file': 0, 'col': 2, 'line': 142}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 165!]	LOGIC ERROR: Undefined or garbage value returned to caller.
+
+FILE: shell/math.c
+{'file': 0, 'col': 2, 'line': 716}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 166!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: util-linux/fbset.c
+{'file': 0, 'col': 2, 'line': 454}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 167!]	DEAD STORE: Value stored to 'mode' during its initialization is never read.
+
+FILE: util-linux/fbset.c
+{'file': 0, 'col': 8, 'line': 454}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 168!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: coreutils/expr.c
+{'file': 0, 'col': 2, 'line': 347}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 169!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: networking/udhcp/d6_dhcpc.c
+{'file': 0, 'col': 3, 'line': 1231}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 170!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: mailutils/reformime.c
+{'file': 0, 'col': 4, 'line': 155}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 171!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: mailutils/reformime.c
+{'file': 0, 'col': 11, 'line': 173}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 172!]	DEAD STORE: Value stored to 'jp1' is never read.
+
+FILE: shell/ash.c
+{'file': 0, 'col': 4, 'line': 3743}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 173!]	API: Null pointer passed as an argument to a 'nonnull' parameter.
+
+FILE: shell/hush.c
+{'file': 0, 'col': 7, 'line': 6179}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 174!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: shell/hush.c
+{'file': 0, 'col': 27, 'line': 6530}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 175!]	MEMORY ERROR: Use of memory after it is freed.
+
+FILE: coreutils/cp.c
+{'file': 0, 'col': 11, 'line': 207}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 176!]	MEMORY ERROR: Use of memory after it is freed.
+
+FILE: coreutils/cp.c
+{'file': 0, 'col': 10, 'line': 217}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 177!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: archival/libarchive/decompress_bunzip2.c
+{'file': 0, 'col': 2, 'line': 165}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 178!]	DEAD STORE: Value stored to 'opcode' is never read.
+
+FILE: networking/tftp.c
+{'file': 0, 'col': 3, 'line': 517}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 179!]	DEAD STORE: Value stored to 'opt' is never read.
+
+FILE: procps/pidof.c
+{'file': 0, 'col': 2, 'line': 87}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 180!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: loginutils/login.c
+{'file': 0, 'col': 14, 'line': 527}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 181!]	DEAD STORE: Value stored to 'total_size' is never read.
+
+FILE: archival/unzip.c
+{'file': 0, 'col': 2, 'line': 680}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 182!]	DEAD STORE: Value stored to 'cdf_offset' is never read.
+
+FILE: archival/unzip.c
+{'file': 0, 'col': 2, 'line': 682}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 183!]	MEMORY ERROR: Use of memory after it is freed.
+
+FILE: networking/nameif.c
+{'file': 0, 'col': 8, 'line': 295}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 184!]	MEMORY ERROR: Use of memory after it is freed.
+
+FILE: networking/nameif.c
+{'file': 0, 'col': 19, 'line': 315}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 185!]	MEMORY ERROR: Use of memory after it is freed.
+
+FILE: networking/nameif.c
+{'file': 0, 'col': 11, 'line': 323}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 186!]	MEMORY ERROR: Use of memory after it is freed.
+
+FILE: miscutils/less.c
+{'file': 0, 'col': 8, 'line': 341}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 187!]	MEMORY ERROR: Use of memory after it is freed.
+
+FILE: miscutils/less.c
+{'file': 0, 'col': 15, 'line': 366}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 188!]	DEAD STORE: Value stored to 'block' is never read.
+
+FILE: util-linux/fsck_minix.c
+{'file': 0, 'col': 4, 'line': 791}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 189!]	DEAD STORE: Value stored to 'aliaslink' during its initialization is never read.
+
+FILE: util-linux/mdev.c
+{'file': 0, 'col': 8, 'line': 624}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 190!]	DEAD STORE: Value stored to 'str_to_match' is never read.
+
+FILE: util-linux/mdev.c
+{'file': 0, 'col': 3, 'line': 628}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 191!]	LOGIC ERROR: The left operand of '==' is a garbage value.
+
+FILE: procps/fuser.c
+{'file': 0, 'col': 17, 'line': 156}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 192!]	LOGIC ERROR: The left operand of '!=' is a garbage value.
+
+FILE: procps/fuser.c
+{'file': 0, 'col': 14, 'line': 159}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 193!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: runit/svlogd.c
+{'file': 0, 'col': 16, 'line': 400}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 194!]	LOGIC ERROR: This function call is prohibited after a successful vfork.
+
+FILE: runit/svlogd.c
+{'file': 0, 'col': 3, 'line': 412}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 195!]	SECURITY: Call to function 'mktemp' is insecure as it always creates or uses insecure temporary file.  Use 'mkstemp' instead.
+
+FILE: coreutils/mktemp.c
+{'file': 0, 'col': 9, 'line': 102}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 196!]	LOGIC ERROR: The left operand of '!=' is a garbage value.
+
+FILE: miscutils/hdparm.c
+{'file': 0, 'col': 18, 'line': 1979}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 197!]	LOGIC ERROR: The left operand of '<<' is a garbage value.
+
+FILE: miscutils/hdparm.c
+{'file': 0, 'col': 23, 'line': 2053}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 198!]	DEAD STORE: Value stored to 'offset' is never read.
+
+FILE: miscutils/flash_lock_unlock.c
+{'file': 0, 'col': 2, 'line': 61}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 199!]	DEAD STORE: Value stored to 'sectors' is never read.
+
+FILE: miscutils/flash_lock_unlock.c
+{'file': 0, 'col': 2, 'line': 62}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 200!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: miscutils/beep.c
+{'file': 0, 'col': 2, 'line': 70}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 201!]	LOGIC ERROR: This assignment is prohibited after a successful vfork.
+
+FILE: libbb/vfork_daemon_rexec.c
+{'file': 0, 'col': 10, 'line': 177}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 202!]	LOGIC ERROR: Dereference of null pointer.
+
+FILE: libbb/appletlib.c
+{'file': 0, 'col': 11, 'line': 155}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 203!]	DEAD STORE: Value stored to 'tty' is never read.
+
+FILE: loginutils/su.c
+{'file': 0, 'col': 2, 'line': 111}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 204!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: sysklogd/logread.c
+{'file': 0, 'col': 3, 'line': 146}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 205!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: procps/sysctl.c
+{'file': 0, 'col': 2, 'line': 106}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 206!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: util-linux/unshare.c
+{'file': 0, 'col': 2, 'line': 205}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 207!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: archival/libarchive/data_extract_to_command.c
+{'file': 0, 'col': 28, 'line': 84}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 208!]	DEAD STORE: Value stored to 'size_bytes' during its initialization is never read.
+
+FILE: miscutils/ubi_tools.c
+{'file': 0, 'col': 21, 'line': 121}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 209!]	DEAD STORE: Value stored to 'size_bytes' is never read.
+
+FILE: miscutils/ubi_tools.c
+{'file': 0, 'col': 3, 'line': 165}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 210!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: networking/telnetd.c
+{'file': 0, 'col': 2, 'line': 650}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 211!]	DEAD STORE: Value stored to 'sec_linger' during its initialization is never read.
+
+FILE: networking/telnetd.c
+{'file': 0, 'col': 6, 'line': 651}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 212!]	LOGIC ERROR: String copy function overflows destination buffer.
+
+FILE: networking/dnsd.c
+{'file': 0, 'col': 3, 'line': 145}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 213!]	DEAD STORE: Value stored to 'cnt' is never read.
+
+FILE: miscutils/nandwrite.c
+{'file': 0, 'col': 2, 'line': 201}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 214!]	DEAD STORE: Value stored to 'rs' is never read.
+
+FILE: networking/inetd.c
+{'file': 0, 'col': 3, 'line': 1636}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 215!]	DEAD STORE: Value stored to 'li' is never read.
+
+FILE: editors/vi.c
+{'file': 0, 'col': 2, 'line': 1095}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 216!]	DEAD STORE: Value stored to 'li' is never read.
+
+FILE: editors/vi.c
+{'file': 0, 'col': 2, 'line': 1099}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 217!]	DEAD STORE: Value stored to 'li' is never read.
+
+FILE: editors/vi.c
+{'file': 0, 'col': 3, 'line': 1133}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 218!]	DEAD STORE: Value stored to 'li' is never read.
+
+FILE: editors/vi.c
+{'file': 0, 'col': 3, 'line': 1140}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 219!]	DEAD STORE: Value stored to 'opcode' is never read.
+
+FILE: networking/tftp.c
+{'file': 0, 'col': 3, 'line': 445}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 220!]	DEAD STORE: Value stored to 'usage_string' during its initialization is never read.
+
+FILE: libbb/appletlib.c
+{'file': 0, 'col': 15, 'line': 149}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 221!]	LOGIC ERROR: This assignment is prohibited after a successful vfork.
+
+FILE: coreutils/timeout.c
+{'file': 0, 'col': 6, 'line': 89}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 222!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: coreutils/timeout.c
+{'file': 0, 'col': 8, 'line': 89}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 223!]	DEAD STORE: Value stored to 'val' is never read.
+
+FILE: util-linux/mdev.c
+{'file': 0, 'col': 4, 'line': 417}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 224!]	DEAD STORE: Value stored to 'arg0' is never read.
+
+FILE: coreutils/test.c
+{'file': 0, 'col': 2, 'line': 825}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 225!]	DEAD STORE: Value stored to 'pid' is never read.
+
+FILE: procps/kill.c
+{'file': 0, 'col': 2, 'line': 208}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 226!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: util-linux/chrt.c
+{'file': 0, 'col': 2, 'line': 75}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 227!]	LOGIC ERROR: This assignment is prohibited after a successful vfork.
+
+FILE: miscutils/conspy.c
+{'file': 0, 'col': 2, 'line': 336}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 228!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: miscutils/conspy.c
+{'file': 0, 'col': 12, 'line': 336}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 229!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: miscutils/conspy.c
+{'file': 0, 'col': 5, 'line': 470}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 230!]	DEAD STORE: Value stored to 'bar' is never read.
+
+FILE: procps/nmeter.c
+{'file': 0, 'col': 30, 'line': 412}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 231!]	LOGIC ERROR: The left operand of '-' is a garbage value.
+
+FILE: procps/nmeter.c
+{'file': 0, 'col': 16, 'line': 747}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 232!]	LOGIC ERROR: The right operand of '-' is a garbage value.
+
+FILE: procps/nmeter.c
+{'file': 0, 'col': 16, 'line': 747}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 233!]	DEAD STORE: Value stored to 'last' is never read.
+
+FILE: procps/nmeter.c
+{'file': 0, 'col': 3, 'line': 915}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 234!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: networking/inetd.c
+{'file': 0, 'col': 55, 'line': 510}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 235!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: miscutils/devmem.c
+{'file': 0, 'col': 2, 'line': 32}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 236!]	MEMORY ERROR: Attempt to free released memory.
+
+FILE: coreutils/dd.c
+{'file': 0, 'col': 4, 'line': 563}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 237!]	LOGIC ERROR: This assignment is prohibited after a successful vfork.
+
+FILE: miscutils/crontab.c
+{'file': 0, 'col': 6, 'line': 48}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 238!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: miscutils/crontab.c
+{'file': 0, 'col': 8, 'line': 48}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 239!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: networking/nc.c
+{'file': 0, 'col': 2, 'line': 122}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 240!]	DEAD STORE: Value stored to 'sfd' during its initialization is never read.
+
+FILE: networking/nc.c
+{'file': 0, 'col': 6, 'line': 122}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 241!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: networking/nc.c
+{'file': 0, 'col': 31, 'line': 233}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 242!]	DEAD STORE: Value stored to 'zPend' is never read.
+
+FILE: archival/libarchive/bz/compress.c
+{'file': 0, 'col': 3, 'line': 234}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 243!]	MEMORY ERROR: Use of memory after it is freed.
+
+FILE: shell/ash.c
+{'file': 0, 'col': 28, 'line': 3346}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 244!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: libbb/lineedit.c
+{'file': 0, 'col': 2, 'line': 1116}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 245!]	LOGIC ERROR: String copy function overflows destination buffer.
+
+FILE: init/init.c
+{'file': 0, 'col': 2, 'line': 658}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 246!]	LOGIC ERROR: This assignment is prohibited after a successful vfork.
+
+FILE: networking/ifupdown.c
+{'file': 0, 'col': 6, 'line': 1216}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 247!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: networking/ifupdown.c
+{'file': 0, 'col': 8, 'line': 1216}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 248!]	LOGIC ERROR: Access to field 'dn_mode' results in a dereference of a null pointer (loaded from variable 'dn').
+
+FILE: coreutils/ls.c
+{'file': 0, 'col': 28, 'line': 487}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 249!]	MEMORY ERROR: Use of memory after it is freed.
+
+FILE: networking/nameif.c
+{'file': 0, 'col': 8, 'line': 288}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 250!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: miscutils/crond.c
+{'file': 0, 'col': 8, 'line': 854}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 251!]	LOGIC ERROR: This function call is prohibited after a successful vfork.
+
+FILE: miscutils/crond.c
+{'file': 0, 'col': 3, 'line': 858}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 252!]	SECURITY: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function.
+
+FILE: init/init.c
+{'file': 0, 'col': 26, 'line': 944}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 253!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: networking/tftp.c
+{'file': 0, 'col': 2, 'line': 835}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 254!]	DEAD STORE: Value stored to 'orig_buf' is never read.
+
+FILE: editors/vi.c
+{'file': 0, 'col': 2, 'line': 1106}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 255!]	DEAD STORE: Value stored to 'opts' is never read.
+
+FILE: coreutils/cat.c
+{'file': 0, 'col': 2, 'line': 190}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 256!]	LOGIC ERROR: Array access (from variable 'argv') results in a null pointer dereference.
+
+FILE: shell/hush.c
+{'file': 0, 'col': 57, 'line': 6233}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 257!]	DEAD STORE: Value stored to 'val' is never read.
+
+FILE: util-linux/mdev.c
+{'file': 0, 'col': 3, 'line': 413}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 258!]	LOGIC ERROR: Access to field 'dn_mode' results in a dereference of a null pointer (loaded from variable 'dn').
+
+FILE: coreutils/ls.c
+{'file': 0, 'col': 7, 'line': 496}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 259!]	LOGIC ERROR: Access to field 'dn_ino' results in a dereference of a null pointer (loaded from variable 'dn').
+
+FILE: coreutils/ls.c
+{'file': 0, 'col': 42, 'line': 500}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 260!]	LOGIC ERROR: Access to field 'dn_blocks' results in a dereference of a null pointer (loaded from variable 'dn').
+
+FILE: coreutils/ls.c
+{'file': 0, 'col': 46, 'line': 503}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 261!]	LOGIC ERROR: Access to field 'sid' results in a dereference of a null pointer (loaded from variable 'dn').
+
+FILE: coreutils/ls.c
+{'file': 0, 'col': 30, 'line': 533}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 262!]	LOGIC ERROR: Access to field 'name' results in a dereference of a null pointer (loaded from variable 'dn').
+
+FILE: coreutils/ls.c
+{'file': 0, 'col': 23, 'line': 593}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 263!]	LOGIC ERROR: Function call argument is an uninitialized value.
+
+FILE: networking/inetd.c
+{'file': 0, 'col': 55, 'line': 510}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 264!]	DEAD STORE: Value stored to 'cp' is never read.
+
+FILE: networking/tftp.c
+{'file': 0, 'col': 2, 'line': 396}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 265!]	DEAD STORE: Value stored to 'i' is never read.
+
+FILE: editors/vi.c
+{'file': 0, 'col': 3, 'line': 1358}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 266!]	LOGIC ERROR: Dereference of null pointer.
+
+FILE: shell/ash.c
+{'file': 0, 'col': 12, 'line': 11450}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 267!]	DEAD STORE: Value stored to 'opts' is never read.
+
+FILE: networking/hostname.c
+{'file': 0, 'col': 2, 'line': 136}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 268!]	LOGIC ERROR: Access to field 'dn_mode_lstat' results in a dereference of a null pointer (loaded from variable 'dn').
+
+FILE: coreutils/ls.c
+{'file': 0, 'col': 17, 'line': 586}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 269!]	DEAD STORE: Value stored to 'block_nr' is never read.
+
+FILE: networking/tftp.c
+{'file': 0, 'col': 2, 'line': 395}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 270!]	DEAD STORE: Value stored to 'arg' is never read.
+
+FILE: procps/kill.c
+{'file': 0, 'col': 2, 'line': 205}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 271!]	LOGIC ERROR: Array access (from variable 'list') results in a null pointer dereference.
+
+FILE: shell/hush.c
+{'file': 0, 'col': 10, 'line': 2917}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 272!]	DEAD STORE: Value stored to 'pid' is never read.
+
+FILE: networking/inetd.c
+{'file': 0, 'col': 4, 'line': 1364}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 273!]	LOGIC ERROR: Assigned value is garbage or undefined.
+
+FILE: procps/ps.c
+{'file': 0, 'col': 2, 'line': 657}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 274!]	DEAD STORE: Value stored to 'ext' during its initialization is never read.
+
+FILE: miscutils/man.c
+{'file': 0, 'col': 8, 'line': 171}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 275!]	DEAD STORE: Value stored to 'opt' is never read.
+
+FILE: archival/gzip.c
+{'file': 0, 'col': 2, 'line': 2221}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 276!]	DEAD STORE: Value stored to 'opt' is never read.
+
+FILE: archival/gzip.c
+{'file': 0, 'col': 2, 'line': 2223}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 277!]	API: Null pointer passed as an argument to a 'nonnull' parameter.
+
+FILE: shell/hush.c
+{'file': 0, 'col': 6, 'line': 7388}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
+
+[ISSUE 278!]	MEMORY ERROR: Use of memory after it is freed.
+
+FILE: shell/hush.c
+{'file': 0, 'col': 20, 'line': 2296}
+
+NOTES:
+
+
+Is this an actual issue?
+
+	-
+
+
+[COMPLETE?]: 
+
++-------------------------------------------------------------------------------+
