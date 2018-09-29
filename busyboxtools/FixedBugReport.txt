@@ -1,0 +1,3431 @@
+FixedBugReport by Edward M. Abrahamson.
+
+Created a script in Python to filter out the unnecessary bug-finding
+information from the the beautified "unique.json" file (courtesy of Da Kim),
+making the information easier to read.
+Cut unique.json down from 168,008 lines of text to 3,431 lines of text.
+Removed some pieces of info that didn't seem to help much - can add back if
+needed.
+
+NOTE: Removed "DEAD STORE" issues from this output file - we do not
+need to do them.  I put them in their own file ("DeadStoreBugs.txt")
+if anyone is interested in looking at them.
+
+BUG BREAKDOWN:
+
+0/  6   API Issues          (solved)
+0/ 17   Memory Errors       (solved)
+0/ 42   Security Issues     (solved)
+0/119   Logic Errors        (solved)
+..........................................
+0/184   Total Issues        (solved)
+
+===============================================================================
+
+
+[ISSUE 1: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: miscutils/crond.c
+{'line': 710, 'col': 8, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 2: LOGIC ERROR]
+This function call is prohibited after a successful vfork.
+
+FILE: miscutils/crond.c
+{'line': 714, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 3: LOGIC ERROR]
+Function call argument is an uninitialized value.
+
+FILE: networking/brctl.c
+{'line': 269, 'col': 6, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 4: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: printutils/lpd.c
+{'line': 120, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 5: LOGIC ERROR]
+Function call argument is an uninitialized value.
+
+FILE: archival/bbunzip.c
+{'line': 123, 'col': 8, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 6: LOGIC ERROR]
+The left operand of '!=' is a garbage value.
+
+FILE: archival/bbunzip.c
+{'line': 158, 'col': 22, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 7: LOGIC ERROR]
+This assignment is prohibited after a successful vfork.
+
+FILE: libbb/xfuncs_printf.c
+{'line': 682, 'col': 6, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 8: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: libbb/xfuncs_printf.c
+{'line': 682, 'col': 8, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 9: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: init/bootchartd.c
+{'line': 459, 'col': 15, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 10: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: editors/patch.c
+{'line': 369, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 11: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: util-linux/mdev.c
+{'line': 624, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 12: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: util-linux/mdev.c
+{'line': 1087, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 13: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: miscutils/ubi_tools.c
+{'line': 121, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 14: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: util-linux/volume_id/get_devname.c
+{'line': 254, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 15: MEMORY ERROR]
+Use of memory after it is freed.
+
+FILE: findutils/find.c
+{'line': 651, 'col': 14, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 16: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: networking/tcpudp.c
+{'line': 250, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 17: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: networking/tcpudp.c
+{'line': 479, 'col': 8, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 18: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: util-linux/more.c
+{'line': 76, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 19: MEMORY ERROR]
+Argument to free() is the address of the global variable
+'defoptindvar', which is not memory allocated by malloc().
+
+FILE: shell/ash.c
+{'line': 2262, 'col': 5, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 20: MEMORY ERROR]
+Argument to free() is the address of the global variable
+'defoptindvar', which is not memory allocated by malloc().
+
+FILE: shell/ash.c
+{'line': 2282, 'col': 5, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 21: MEMORY ERROR]
+Use of memory after it is freed.
+
+FILE: shell/ash.c
+{'line': 2304, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 22: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: shell/ash.c
+{'line': 9230, 'col': 10, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 23: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: networking/ifupdown.c
+{'line': 1141, 'col': 11, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 24: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: findutils/grep.c
+{'line': 333, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 25: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: runit/runsvdir.c
+{'line': 127, 'col': 8, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 26: LOGIC ERROR]
+This function call is prohibited after a successful vfork.
+
+FILE: runit/runsvdir.c
+{'line': 135, 'col': 4, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 27: LOGIC ERROR]
+This function call is prohibited after a successful vfork.
+
+FILE: runit/runsvdir.c
+{'line': 147, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 28: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: runit/runsvdir.c
+{'line': 239, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 29: LOGIC ERROR]
+Array access results in a null pointer dereference.
+
+FILE: util-linux/fdisk.c
+{'line': 1114, 'col': 19, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 30: LOGIC ERROR]
+The right operand of '<' is a garbage value.
+
+FILE: util-linux/fdisk.c
+{'line': 2387, 'col': 47, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 31: LOGIC ERROR]
+The left operand of '+' is a garbage value.
+
+FILE: util-linux/fdisk.c
+{'line': 2482, 'col': 26, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 32: LOGIC ERROR]
+The right operand of '<' is a garbage value.
+
+FILE: util-linux/fdisk.c
+{'line': 2522, 'col': 13, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 33: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: networking/nc_bloaty.c
+{'line': 417, 'col': 8, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 34: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: miscutils/hexedit.c
+{'line': 296, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 35: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: networking/inetd.c
+{'line': 1217, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 36: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: networking/inetd.c
+{'line': 1402, 'col': 12, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 37: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: networking/udhcp/dhcpd.c
+{'line': 809, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 38: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: libbb/rtc.c
+{'line': 96, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 39: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: networking/ping.c
+{'line': 600, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 40: LOGIC ERROR]
+Passed-by-value struct argument contains uninitialized data (e.g.,
+field: 's_addr').
+
+FILE: networking/ping.c
+{'line': 660, 'col': 4, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 41: MEMORY ERROR]
+Use of memory after it is freed.
+
+FILE: libbb/copy_file.c
+{'line': 375, 'col': 5, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 42: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: coreutils/sort.c
+{'line': 133, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 43: API]
+Null pointer passed as an argument to a 'nonnull' parameter.
+
+FILE: coreutils/sort.c
+{'line': 486, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 44: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: networking/zcip.c
+{'line': 183, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 45: LOGIC ERROR]
+Division by zero.
+
+FILE: miscutils/flash_eraseall.c
+{'line': 70, 'col': 55, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 46: API]
+Null pointer passed as an argument to a 'nonnull' parameter.
+
+FILE: archival/dpkg.c
+{'line': 852, 'col': 8, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 47: LOGIC ERROR]
+This assignment is prohibited after a successful vfork.
+
+FILE: mailutils/mail.c
+{'line': 49, 'col': 15, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 48: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: mailutils/mail.c
+{'line': 49, 'col': 17, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 49: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: mailutils/mail.c
+{'line': 118, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 50: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: console-tools/openvt.c
+{'line': 114, 'col': 6, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 51: LOGIC ERROR]
+This function call is prohibited after a successful vfork.
+
+FILE: console-tools/openvt.c
+{'line': 117, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 52: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: networking/tls_aes.c
+{'line': 158, 'col': 9, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 53: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: runit/runsv.c
+{'line': 283, 'col': 10, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 54: LOGIC ERROR]
+This function call is prohibited after a successful vfork.
+
+FILE: runit/runsv.c
+{'line': 290, 'col': 19, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 55: LOGIC ERROR]
+This function call is prohibited after a successful vfork.
+
+FILE: runit/runsv.c
+{'line': 293, 'col': 5, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 56: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: runit/runsv.c
+{'line': 360, 'col': 14, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 57: LOGIC ERROR]
+This function call is prohibited after a successful vfork.
+
+FILE: runit/runsv.c
+{'line': 369, 'col': 5, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 58: LOGIC ERROR]
+This function call is prohibited after a successful vfork.
+
+FILE: runit/runsv.c
+{'line': 382, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 59: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: networking/httpd.c
+{'line': 1554, 'col': 8, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 60: LOGIC ERROR]
+This assignment is prohibited after a successful vfork.
+
+FILE: networking/httpd.c
+{'line': 1564, 'col': 22, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 61: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: networking/httpd.c
+{'line': 2091, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 62: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: networking/httpd.c
+{'line': 2624, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 63: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: init/init.c
+{'line': 488, 'col': 9, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 64: LOGIC ERROR]
+This function call is prohibited after a successful vfork.
+
+FILE: init/init.c
+{'line': 499, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 65: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: init/init.c
+{'line': 745, 'col': 8, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 66: LOGIC ERROR]
+This function call is prohibited after a successful vfork.
+
+FILE: init/init.c
+{'line': 747, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 67: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: networking/ntpd.c
+{'line': 1300, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 68: LOGIC ERROR]
+String copy function overflows destination buffer.
+
+FILE: editors/awk.c
+{'line': 692, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 69: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: editors/awk.c
+{'line': 2506, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 70: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: miscutils/fbsplash.c
+{'line': 493, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 71: API]
+Null pointer passed as an argument to a 'nonnull' parameter.
+
+FILE: debianutils/start_stop_daemon.c
+{'line': 539, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 72: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: runit/chpst.c
+{'line': 281, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 73: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: networking/telnetd.c
+{'line': 481, 'col': 8, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 74: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: networking/ftpd.c
+{'line': 694, 'col': 27, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 75: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: networking/slattach.c
+{'line': 115, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 76: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: loginutils/login.c
+{'line': 327, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 77: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: libbb/vfork_daemon_rexec.c
+{'line': 166, 'col': 8, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 78: LOGIC ERROR]
+This function call is prohibited after a successful vfork.
+
+FILE: libbb/vfork_daemon_rexec.c
+{'line': 171, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 79: MEMORY ERROR]
+Use of memory after it is freed.
+
+FILE: miscutils/devfsd.c
+{'line': 1018, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 80: LOGIC ERROR]
+Branch condition evaluates to a garbage value.
+
+FILE: modutils/modutils.c
+{'line': 27, 'col': 14, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 81: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: networking/udhcp/domain_codec.c
+{'line': 34, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 82: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: coreutils/test.c
+{'line': 628, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 83: LOGIC ERROR]
+This assignment is prohibited after a successful vfork.
+
+FILE: util-linux/script.c
+{'line': 133, 'col': 12, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 84: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: util-linux/script.c
+{'line': 133, 'col': 14, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 85: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: coreutils/shred.c
+{'line': 44, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 86: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: miscutils/i2c_tools.c
+{'line': 775, 'col': 13, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 87: LOGIC ERROR]
+This assignment is prohibited after a successful vfork.
+
+FILE: networking/wget.c
+{'line': 705, 'col': 6, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 88: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: networking/wget.c
+{'line': 705, 'col': 8, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 89: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: networking/wget.c
+{'line': 777, 'col': 27, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 90: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: miscutils/less.c
+{'line': 740, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 91: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: coreutils/dos2unix.c
+{'line': 64, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 92: LOGIC ERROR]
+Array access (from variable 'dst') results in a null pointer
+dereference.
+
+FILE: libbb/unicode.c
+{'line': 1124, 'col': 15, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 93: LOGIC ERROR]
+The left operand of '==' is a garbage value.
+
+FILE: archival/libarchive/open_transformer.c
+{'line': 88, 'col': 14, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 94: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: archival/libarchive/open_transformer.c
+{'line': 112, 'col': 27, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 95: SECURITY]
+The return value from the call to 'setgid' is not checked.  If an
+error occurs in 'setgid', the following code may execute with
+unexpected privileges.
+
+FILE: libbb/appletlib.c
+{'line': 695, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 96: SECURITY]
+The return value from the call to 'setuid' is not checked.  If an
+error occurs in 'setuid', the following code may execute with
+unexpected privileges.
+
+FILE: libbb/appletlib.c
+{'line': 696, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 97: API]
+Null pointer passed as an argument to a 'nonnull' parameter.
+
+FILE: libbb/appletlib.c
+{'line': 932, 'col': 20, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 98: LOGIC ERROR]
+This assignment is prohibited after a successful vfork.
+
+FILE: miscutils/time.c
+{'line': 398, 'col': 6, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 99: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: miscutils/time.c
+{'line': 398, 'col': 8, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 100: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: networking/udhcp/dhcpc.c
+{'line': 1251, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 101: LOGIC ERROR]
+Dereference of null pointer.
+
+FILE: util-linux/getopt.c
+{'line': 252, 'col': 21, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 102: LOGIC ERROR]
+Dereference of null pointer (loaded from variable 'val').
+
+FILE: shell/hush.c
+{'line': 5628, 'col': 6, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 103: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: shell/hush.c
+{'line': 5649, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 104: LOGIC ERROR]
+Array access (from variable 'argv') results in a null pointer
+dereference.
+
+FILE: shell/hush.c
+{'line': 6233, 'col': 81, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 105: LOGIC ERROR]
+This assignment is prohibited after a successful vfork.
+
+FILE: shell/hush.c
+{'line': 6712, 'col': 6, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 106: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: shell/hush.c
+{'line': 6712, 'col': 8, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 107: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: shell/hush.c
+{'line': 6716, 'col': 28, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 108: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: shell/hush.c
+{'line': 8199, 'col': 36, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 109: LOGIC ERROR]
+This assignment is prohibited after a successful vfork.
+
+FILE: archival/tar.c
+{'line': 614, 'col': 10, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 110: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: archival/tar.c
+{'line': 614, 'col': 12, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 111: LOGIC ERROR]
+Function call argument is an uninitialized value.
+
+FILE: archival/tar.c
+{'line': 1232, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 112: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: util-linux/rtcwake.c
+{'line': 142, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 113: LOGIC ERROR]
+Undefined or garbage value returned to caller.
+
+FILE: shell/math.c
+{'line': 716, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 114: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: util-linux/fbset.c
+{'line': 454, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 115: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: coreutils/expr.c
+{'line': 347, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 116: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: networking/udhcp/d6_dhcpc.c
+{'line': 1231, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 117: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: mailutils/reformime.c
+{'line': 155, 'col': 4, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 118: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: mailutils/reformime.c
+{'line': 173, 'col': 11, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 119: API]
+Null pointer passed as an argument to a 'nonnull' parameter.
+
+FILE: shell/hush.c
+{'line': 6179, 'col': 7, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 120: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: shell/hush.c
+{'line': 6530, 'col': 27, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 121: MEMORY ERROR]
+Use of memory after it is freed.
+
+FILE: coreutils/cp.c
+{'line': 207, 'col': 11, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 122: MEMORY ERROR]
+Use of memory after it is freed.
+
+FILE: coreutils/cp.c
+{'line': 217, 'col': 10, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 123: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: archival/libarchive/decompress_bunzip2.c
+{'line': 165, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 124: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: loginutils/login.c
+{'line': 527, 'col': 14, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 125: MEMORY ERROR]
+Use of memory after it is freed.
+
+FILE: networking/nameif.c
+{'line': 295, 'col': 8, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 126: MEMORY ERROR]
+Use of memory after it is freed.
+
+FILE: networking/nameif.c
+{'line': 315, 'col': 19, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 127: MEMORY ERROR]
+Use of memory after it is freed.
+
+FILE: networking/nameif.c
+{'line': 323, 'col': 11, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 128: MEMORY ERROR]
+Use of memory after it is freed.
+
+FILE: miscutils/less.c
+{'line': 341, 'col': 8, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 129: MEMORY ERROR]
+Use of memory after it is freed.
+
+FILE: miscutils/less.c
+{'line': 366, 'col': 15, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 130: LOGIC ERROR]
+The left operand of '==' is a garbage value.
+
+FILE: procps/fuser.c
+{'line': 156, 'col': 17, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 131: LOGIC ERROR]
+The left operand of '!=' is a garbage value.
+
+FILE: procps/fuser.c
+{'line': 159, 'col': 14, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 132: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: runit/svlogd.c
+{'line': 400, 'col': 16, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 133: LOGIC ERROR]
+This function call is prohibited after a successful vfork.
+
+FILE: runit/svlogd.c
+{'line': 412, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 134: SECURITY]
+Call to function 'mktemp' is insecure as it always creates or uses
+insecure temporary file.  Use 'mkstemp' instead.
+
+FILE: coreutils/mktemp.c
+{'line': 102, 'col': 9, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 135: LOGIC ERROR]
+The left operand of '!=' is a garbage value.
+
+FILE: miscutils/hdparm.c
+{'line': 1979, 'col': 18, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 136: LOGIC ERROR]
+The left operand of '<<' is a garbage value.
+
+FILE: miscutils/hdparm.c
+{'line': 2053, 'col': 23, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 137: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: miscutils/beep.c
+{'line': 70, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 138: LOGIC ERROR]
+This assignment is prohibited after a successful vfork.
+
+FILE: libbb/vfork_daemon_rexec.c
+{'line': 177, 'col': 10, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 139: LOGIC ERROR]
+Dereference of null pointer.
+
+FILE: libbb/appletlib.c
+{'line': 155, 'col': 11, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 140: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: sysklogd/logread.c
+{'line': 146, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 141: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: procps/sysctl.c
+{'line': 106, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 142: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: util-linux/unshare.c
+{'line': 205, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 143: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: archival/libarchive/data_extract_to_command.c
+{'line': 84, 'col': 28, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 144: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: networking/telnetd.c
+{'line': 650, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 145: LOGIC ERROR]
+String copy function overflows destination buffer.
+
+FILE: networking/dnsd.c
+{'line': 145, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 146: LOGIC ERROR]
+This assignment is prohibited after a successful vfork.
+
+FILE: coreutils/timeout.c
+{'line': 89, 'col': 6, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 147: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: coreutils/timeout.c
+{'line': 89, 'col': 8, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 148: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: util-linux/chrt.c
+{'line': 75, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 149: LOGIC ERROR]
+This assignment is prohibited after a successful vfork.
+
+FILE: miscutils/conspy.c
+{'line': 336, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 150: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: miscutils/conspy.c
+{'line': 336, 'col': 12, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 151: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: miscutils/conspy.c
+{'line': 470, 'col': 5, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 152: LOGIC ERROR]
+The left operand of '-' is a garbage value.
+
+FILE: procps/nmeter.c
+{'line': 747, 'col': 16, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 153: LOGIC ERROR]
+The right operand of '-' is a garbage value.
+
+FILE: procps/nmeter.c
+{'line': 747, 'col': 16, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 154: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: networking/inetd.c
+{'line': 510, 'col': 55, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 155: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: miscutils/devmem.c
+{'line': 32, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 156: MEMORY ERROR]
+Attempt to free released memory.
+
+FILE: coreutils/dd.c
+{'line': 563, 'col': 4, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 157: LOGIC ERROR]
+This assignment is prohibited after a successful vfork.
+
+FILE: miscutils/crontab.c
+{'line': 48, 'col': 6, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 158: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: miscutils/crontab.c
+{'line': 48, 'col': 8, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 159: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: networking/nc.c
+{'line': 122, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 160: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: networking/nc.c
+{'line': 233, 'col': 31, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 161: MEMORY ERROR]
+Use of memory after it is freed.
+
+FILE: shell/ash.c
+{'line': 3346, 'col': 28, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 162: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: libbb/lineedit.c
+{'line': 1116, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 163: LOGIC ERROR]
+String copy function overflows destination buffer.
+
+FILE: init/init.c
+{'line': 658, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 164: LOGIC ERROR]
+This assignment is prohibited after a successful vfork.
+
+FILE: networking/ifupdown.c
+{'line': 1216, 'col': 6, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 165: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: networking/ifupdown.c
+{'line': 1216, 'col': 8, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 166: LOGIC ERROR]
+Access to field 'dn_mode' results in a dereference of a null pointer
+(loaded from variable 'dn').
+
+FILE: coreutils/ls.c
+{'line': 487, 'col': 28, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 167: MEMORY ERROR]
+Use of memory after it is freed.
+
+FILE: networking/nameif.c
+{'line': 288, 'col': 8, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 168: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: miscutils/crond.c
+{'line': 854, 'col': 8, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 169: LOGIC ERROR]
+This function call is prohibited after a successful vfork.
+
+FILE: miscutils/crond.c
+{'line': 858, 'col': 3, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 170: SECURITY]
+Call to function 'vfork' is insecure as it can lead to denial of
+service situations in the parent process. Replace calls to vfork with
+calls to the safer 'posix_spawn' function.
+
+FILE: init/init.c
+{'line': 944, 'col': 26, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 171: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: networking/tftp.c
+{'line': 835, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 172: LOGIC ERROR]
+Array access (from variable 'argv') results in a null pointer
+dereference.
+
+FILE: shell/hush.c
+{'line': 6233, 'col': 57, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 173: LOGIC ERROR]
+Access to field 'dn_mode' results in a dereference of a null pointer
+(loaded from variable 'dn').
+
+FILE: coreutils/ls.c
+{'line': 496, 'col': 7, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 174: LOGIC ERROR]
+Access to field 'dn_ino' results in a dereference of a null pointer
+(loaded from variable 'dn').
+
+FILE: coreutils/ls.c
+{'line': 500, 'col': 42, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 175: LOGIC ERROR]
+Access to field 'dn_blocks' results in a dereference of a null pointer
+(loaded from variable 'dn').
+
+FILE: coreutils/ls.c
+{'line': 503, 'col': 46, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 176: LOGIC ERROR]
+Access to field 'sid' results in a dereference of a null pointer
+(loaded from variable 'dn').
+
+FILE: coreutils/ls.c
+{'line': 533, 'col': 30, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 177: LOGIC ERROR]
+Access to field 'name' results in a dereference of a null pointer
+(loaded from variable 'dn').
+
+FILE: coreutils/ls.c
+{'line': 593, 'col': 23, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 178: LOGIC ERROR]
+Function call argument is an uninitialized value.
+
+FILE: networking/inetd.c
+{'line': 510, 'col': 55, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 179: LOGIC ERROR]
+Dereference of null pointer.
+
+FILE: shell/ash.c
+{'line': 11450, 'col': 12, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 180: LOGIC ERROR]
+Access to field 'dn_mode_lstat' results in a dereference of a null
+pointer (loaded from variable 'dn').
+
+FILE: coreutils/ls.c
+{'line': 586, 'col': 17, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 181: LOGIC ERROR]
+Array access (from variable 'list') results in a null pointer
+dereference.
+
+FILE: shell/hush.c
+{'line': 2917, 'col': 10, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 182: LOGIC ERROR]
+Assigned value is garbage or undefined.
+
+FILE: procps/ps.c
+{'line': 657, 'col': 2, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 183: API]
+Null pointer passed as an argument to a 'nonnull' parameter.
+
+FILE: shell/hush.c
+{'line': 7388, 'col': 6, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
+
++------------------------------------------------------------------------+
+
+[ISSUE 184: MEMORY ERROR]
+Use of memory after it is freed.
+
+FILE: shell/hush.c
+{'line': 2296, 'col': 20, 'file': 0}
+
+NOTES:
+
+
+Is this an actual issue?
+
+    -
+
+
+[COMPLETE?]: 
