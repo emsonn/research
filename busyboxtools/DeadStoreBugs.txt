@@ -12,6 +12,7 @@ FixedBugReport.txt - WE DO NOT NEED TO DO THESE.
 
 *Solving these bugs is just for personal practice*
 
+
 BUG BREAKDOWN:
 
 0/ 94   Dead Store Issues     (solved)
